@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAGA HASBALLAH</title>
+    
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/wBXzxJ6V/Gemini-Generated-Image-94sqxd94sqxd94sq.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://i.postimg.cc/wBXzxJ6V/Gemini-Generated-Image-94sqxd94sqxd94sq.png">
+
+    <meta name="description" content="ابحث عن مقتنياتك الملكية النادرة والكتب المميزة في مكتبة طه حسب الله الإلكترونية.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <meta name="google-site-verification" content="8omScYCxhlDKxfZw9PbTh_NUsbCimk3trCNrpAiHlt4" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://textfixai.netlify.app/">
+    <meta property="og:title" content="مكتبة طه حسب الله - TAGA HASBALLAH">
+    <meta property="og:description" content="ابحث عن مقتنياتك الملكية النادرة والكتب المميزة.">
+    <meta property="og:image" content="https://i.postimg.cc/wBXzxJ6V/Gemini-Generated-Image-94sqxd94sqxd94sq.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="مكتبة طه حسب الله - TAGA HASBALLAH">
+    <meta name="twitter:description" content="ابحث عن مقتنياتك الملكية النادرة والكتب المميزة.">
+    <meta name="twitter:image" content="https://i.postimg.cc/wBXzxJ6V/Gemini-Generated-Image-94sqxd94sqxd94sq.png">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">TAGA HASBALLAH</div>
+        <div class="search-container">
+            <input type="text" id="main-search" placeholder="ابحث عن مقتنياتك الملكية النادرة...">
+            <i class="fas fa-search search-icon"></i>
+            <div class="search-results-dropdown" id="search-dropdown"></div>
+        </div>
+        <div class="nav-controls">
+            <div class="cart-icon" onclick="openCartModal()">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </div>
+            <i class="fas fa-moon" id="theme-toggle" title="تبديل الوضع المضيء"></i>
+        </div>
+    </nav>
+
+    <div class="menu-links">
+        <a href="#store-section" class="nav-link-item" onclick="filterCategory('all')">كل المقتنيات</a>
+        <a href="#store-section" class="nav-link-item" onclick="filterCategory('pens')">أقلام فاخرة</a>
+        <a href="#store-section" class="nav-link-item" onclick="filterCategory('watches')">ساعات نادرة</a>
+        <a href="#store-section" class="nav-link-item" onclick="filterCategory('lighters')">ولاعات معتقة</a>
+        <a href="#store-section" class="nav-link-item" onclick="filterCategory('handmade')">شغل يدوياً</a>
+    </div>
+
+    <header class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://i.postimg.cc/Y9QTzw40/Whats-App-Image-2026-06-11-at-7-36-20-PM.jpg');"></div>
+            <div class="slide" style="background-image: url('https://i.postimg.cc/pXs4ZCdF/Whats-App-Image-2026-06-11-at-7-36-46-PM.jpg');"></div>
+            <div class="slide" style="background-image: url('https://i.postimg.cc/Y9QTzw40/Whats-App-Image-2026-06-11-at-7-36-20-PM.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>مرحباً بك في عالم الفخامة والأصالة</h1>
+            <p>مقتنيات ملكية معتقة ونادرة تم انتقاؤها بعناية لتناسب أصحاب الذوق الرفيع</p>
+            <a href="#store-section" class="btn-discover">اكتشف المعرض الملكي</a>
+        </div>
+    </header>
+
+    <div class="categories-nav">
+        <div class="cat-tab" onclick="filterCategory('all')"><i class="fas fa-th-large"></i> الكل</div>
+        <div class="cat-tab" onclick="filterCategory('pens')"><i class="fas fa-pen-fancy"></i> أقلام</div>
+        <div class="cat-tab" onclick="filterCategory('watches')"><i class="fas fa-clock"></i> ساعات</div>
+        <div class="cat-tab" onclick="filterCategory('lighters')"><i class="fas fa-fire"></i> ولاعات</div>
+        <div class="cat-tab" onclick="filterCategory('handmade')"><i class="fas fa-hammer"></i> يدوية الصنع</div>
+    </div>
+
+    <main class="store-section" id="store-section">
+        <div class="store-header">
+            <h2>المعروضات الحالية</h2>
+        </div>
+        <div class="products-grid" id="products-container">
+            </div>
+    </main>
+
+    <footer class="contact">
+        <h2>مكتبة طه حسب الله</h2>
+        <div class="contact-card">
+            <p><i class="fas fa-map-marker-alt"></i> المقر الرئيسي: 44 شارع طلعت حرب - دار القضاء العالي - وسط البلد - القاهرة - مصر</p>
+            <p><i class="fas fa-shield-alt"></i> قطع أصلية مع ضمان الفخامة والجودة</p>
+            <p><i class="fab fa-whatsapp"></i> خدمة العملاء والمالك مباشرة: 201080768225+</p>
+            <button class="btn-read-policy" onclick="openPureTermsModal()">📄 إقرار وشروط السياسة العامة للمكتبة</button>
+        </div>
+        <div style="margin-top: 30px;">
+            <button class="btn-admin" onclick="openAdminPanel()"><i class="fas fa-lock"></i> لوحة المالك والتحكم</button>
+        </div>
+    </footer>
+
+    <div class="modal" id="product-detail-modal">
+        <div class="modal-content product-popup">
+            <span class="close-btn" onclick="closeProductModal()">&times;</span>
+            <div class="popup-layout">
+                <div class="slider-container">
+                    <img id="popup-img" src="" alt="صورة المعاينة">
+                    <div class="slider-thumbnails" id="popup-thumbnails"></div>
+                </div>
+                <div class="popup-info">
+                    <h2 id="popup-title" style="margin:0; font-size: 20px;"></h2>
+                    <p class="popup-price" id="popup-price"></p>
+                    <p class="popup-desc" id="popup-desc"></p>
+                    <button class="btn-add-cart-large" id="popup-add-btn">طلب اقتناء فوري لشراء القطعة</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeCartModal()">&times;</span>
+            <h3 style="margin:0 0 10px 0; text-align: center; color:var(--gold-premium);">استمارة اقتناء قطعة ملكية</h3>
+            <div id="cart-items-list"></div>
+            <div id="checkout-form-section" style="margin-top:15px;">
+                <div class="inputs-group">
+                    <input type="text" id="client-name" placeholder="اسمك الثنائي الكريم..." required>
+                    <input type="tel" id="client-phone1" placeholder="رقم هاتفك الأساسي..." required>
+                    <input type="tel" id="client-phone2" placeholder="رقم هاتف بديل / واتساب (اختياري)...">
+                    <input type="text" id="client-address" placeholder="عنوان الشحن بالتفصيل الدقيق..." required>
+                    <button class="btn-goto-terms" onclick="validateInputsAndOpenTerms()">الخطوة التالية (الشروط والأحكام) 🔒</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="terms-modal">
+        <div class="modal-content terms-box">
+            <h3 style="margin:0 0 10px 0; text-align:center; color:#ff4d5e;"><i class="fas fa-balance-scale"></i> إقرار العهدة وسياسة الشراء</h3>
+            <p style="font-size: 13px; color:#aaa; text-align: center; margin:0 0 10px 0;">يرجى سحب النص لأسفل وقراءة الشروط بالكامل لتفعيل زر الإرسال رسمياً.</p>
+            <div class="terms-text-container" id="terms-text-scrollable" onscroll="handleTermsScroll()">
+                <p><strong>بند 1: جدية الطلب.</strong> يقر المشتري أن بمجرد إرسال هذا الطلب عبر واتساب، فقد دخل في عملية شراء جادة وملزمة للطرفين نظراً لطبيعة القطع النادرة.</p>
+                <p><strong>بند 2: معاينة القطعة.</strong> القطع المتاحة مقتنيات أثرية أو يدوية نادرة, ويحق للعميل المعاينة التامة عند الاستلام والرفض في حال عدم المطابقة للمعاينة الموضحة بالصور.</p>
+                <p><strong>بند 3: سياسة الشحن.</strong> يتم تنسيق تكاليف الشحن المؤمن بالكامل بناءً على موقع العميل بالتواصل المباشر مع المالك.</p>
+                <p><strong>بند 4: الحماية والخصوصية.</strong> بيانات العميل مشفرة بالكامل محلياً ولا يتم مشاركتها مع أي أطراف ثالثة أو سيرفرات خارجية مطلقاً.</p>
+            </div>
+            <button class="btn-send-order" id="btn-confirm-final" onclick="sendOrderToWhatsApp()" disabled>🔒 يجب قراءة الشروط بالكامل للتفعيل...</button>
+            <button class="btn-goto-terms" onclick="closeTermsModal()" style="background:#555; color:#fff; margin-top:5px; padding:10px;">تراجع وتعديل البيانات</button>
+        </div>
+    </div>
+
+    <div class="modal" id="pure-read-terms-modal">
+        <div class="modal-content terms-box">
+            <span class="close-btn" onclick="closePureTermsModal()">&times;</span>
+            <h3 style="margin:0 0 15px 0; text-align:center; color:var(--gold-premium);">سياسات وشروط مكتبة طه حسب الله</h3>
+            <div class="terms-text-container" style="max-height: 350px; overflow-y:auto;">
+                <p><strong>أولاً:</strong> المكتبة متخصصة في القطع النادرة جداً (الأقلام المعتقة، الساعات السويسرية القديمة، الولاعات الأصلية، التحف اليدوية).</p>
+                <p><strong>ثانياً:</strong> جميع البيانات والعمليات محمية وتتم بآلية التواصل المباشر والمشفر والموثق مع المالك لضمان أعلى مستويات الأمان والأصالة والسرية للعملاء.</p>
+                <p><strong>ثالثاً:</strong> الحذف والتعديل في الكتالوج هي صلاحيات حصرية للمالك عبر الرمز السري الفخري الشخصي المبرمج في النظام.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="admin-modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeAdminPanel()">&times;</span>
+            <h3 id="admin-modal-title" style="margin:0 0 15px 0; text-align:center; color:var(--gold-premium);">إضافة قطعة ملكية جديدة</h3>
+            <div class="inputs-group">
+                <input type="password" id="admin-password" placeholder="أدخل الرمز السري للمالك لتفعيل الإجراء..." required>
+                <input type="text" id="prod-name" placeholder="اسم القطعة الفاخرة بالكامل...">
+                <input type="number" id="prod-price" placeholder="سعر القطعة (بالجنيه المصري)...">
+                
+                <select id="prod-cat">
+                    <option value="pens">قسم الأقلام الفاخرة</option>
+                    <option value="watches">قسم الساعات النادرة</option>
+                    <option value="lighters">قسم الولاعات المعتقة</option>
+                    <option value="handmade">قسم الشغل اليدوي الخاص</option>
+                </select>
+                
+                <input type="text" id="prod-img" placeholder="رابط الصورة المباشر الأساسي...">
+                <input type="text" id="prod-img2" placeholder="رابط صورة ثانية إضافية (اختياري)...">
+                <input type="text" id="prod-img3" placeholder="رابط صورة ثالثة إضافية (اختياري)...">
+                <textarea id="prod-desc" placeholder="وصف وتفاصيل القطعة ومميزاتها الملكية النادرة..." style="padding:12px; border:1.5px solid var(--gold-premium); border-radius:8px; background:transparent; color:var(--text-main); font-family:inherit; font-size:14px; outline:none; resize:none; height:70px;"></textarea>
+                
+                <button class="btn-goto-terms" id="btn-admin-submit" onclick="handleAdminAction()">إضافة القطعة للمكتبة ✨</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
